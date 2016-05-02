@@ -25,6 +25,12 @@ stream.write('Account SID,Description,Start Date,End Date,Count,Count Unit,Usage
 var accountsUrl = 'https://api.twilio.com/2010-04-01/Accounts.json?PageSize=1000'
 var accounts = [];
 
+if(process.argv[6]) {
+	var concurrency = process.argv[6];
+} else {
+	var concurrency = 25;
+}
+
 getAccounts(accountsUrl);
 
 function getAccounts(uri) {
@@ -98,7 +104,7 @@ function getBillings(accounts){
 		});
 
 		
-	}, 10);
+	}, concurrency);
 
 	q.drain = function() {
 		console.log('CSV complete. File saved as ' + '"Bill for ' + sid + ' from ' + startDate.format('YYYY-MM-DD') + ' to ' + endDate.format('YYYY-MM-DD') + '"');
