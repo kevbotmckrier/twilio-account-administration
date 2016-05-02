@@ -1,0 +1,16 @@
+{
+  "name": "bill-csv",
+  "version": "1.0.0",
+  "description": "creates csv bill from usage api",
+  "main": "summary.js",
+  "dependencies": {
+    "moment": "^2.13.0",
+    "request-promise": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
