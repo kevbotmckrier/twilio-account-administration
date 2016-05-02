@@ -19,3 +19,13 @@ This will include Account SID, Description, Start Date and End Date (for partial
 **If you sum up everything you will get a number larger than your total usage!**
 
 This .csv includes every possible category so there is some overlap including the totalPrice parameter.
+
+#Optional parameter
+
+The default concurrency is 25, but if you want to adjust this you can pass in a 5th parameter:
+
+```
+node generateSummaryBillCsv.js [Account SID] [Account Auth Token] [Start Date (YYYY-MM-DD)] [End Date (YYYY-MM-DD)] [Concurrency]
+```
+
+Please note that Twilio accounts have a default GET concurrency of 100.
