@@ -1,4 +1,4 @@
-##Pull Twilio Usage CSV
+##Twilio Account Administration Scripts
 
 ###Installation
 
@@ -20,12 +20,27 @@ This will include Account SID, Description, Start Date and End Date (for partial
 
 This .csv includes every possible category so there is some overlap including the totalPrice parameter.
 
-#Optional parameter
+###Pulling Twilio Phone Numbers
 
-The default concurrency is 25, but if you want to adjust this you can pass in a 5th parameter:
+Call with 
+```
+node generateSummaryBillCsv.js [Account SID] [Account Auth Token]
+```
+
+This will generate a .csv file called Phone Numbers for [AccountSid] containing all of your phone numbers for every subaccount.
+
+It will include the Account SID, phone number friendly name, and phone number.
+
+####Optional parameter
+
+The default concurrency is 25, but if you want to adjust this you can pass in an additional parameter:
 
 ```
 node generateSummaryBillCsv.js [Account SID] [Account Auth Token] [Start Date (YYYY-MM-DD)] [End Date (YYYY-MM-DD)] [Concurrency]
+```
+
+```
+node generatePhoneNumberCsv.js [Account SID] [Account Auth Token] [Concurrency]
 ```
 
 Please note that Twilio accounts have a default GET concurrency of 100.
