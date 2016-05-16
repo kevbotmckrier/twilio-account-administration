@@ -22,7 +22,7 @@ var getAccounts = function(sid,auth) {
 		.then(function(response){
 			for(i = 0; i < response.accounts.length; i++) {
 				if(response.accounts[i].status!='closed'&&response.accounts[i].auth_token.length>0) {
-					accounts.push({sid: response.accounts[i].sid, auth: response.accounts[i].auth_token});
+					accounts.push({sid: response.accounts[i].sid, auth: response.accounts[i].auth_token, friendly_name: response.accounts[i].friendly_name});
 				}
 			}
 

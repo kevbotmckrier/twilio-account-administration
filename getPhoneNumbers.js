@@ -6,7 +6,7 @@ var moment = require('moment');
 var getPhoneNumbers = function(sid,auth,accounts,concurrency){
 
 	var stream = fs.createWriteStream('Phone Numbers for ' + sid + '.csv');
-	stream.write('Account SID,Phone Number\n');
+	stream.write('Account SID,Account Friendly Name,Phone Number Friendly Name,Phone Number\n');
 
 	var q = async.queue(function(task,callback){
 		
@@ -29,12 +29,12 @@ var getPhoneNumbers = function(sid,auth,accounts,concurrency){
 
 			async.forEachOf(response.incoming_phone_numbers, function(item,key){
 
-				stream.write(item.account_sid+','+item.friendly_name+','+item.phone_number+'\n');
+				stream.write(item.account_sid+','+task.friendly_name+','+item.friendly_name+','+item.phone_number+'\n');
 
 			});
 			
 			if(response.next_page_uri){
-				q.push({sid: task.sid, auth: task.auth, next_page_uri: response.next_page_uri});
+				q.push({sid: task.sid, auth: task.auth, next_page_uri: response.next_page_uri, friendly_name: task.friendly_name});
 			}
 
 			callback();
