@@ -31,7 +31,21 @@ This will generate a .csv file called Phone Numbers for [AccountSid] containing 
 
 It will include the Account SID, phone number friendly name, and phone number.
 
-####Optional parameter
+###Pulling Twilio Call Logs
+
+Call with 
+```
+node pullCallLogs.js [Account SID] [Account Auth Token] [Start Date YYYY-MM-DD] [End Date YYYY-MM-DD]
+```
+
+This will generate a .csv file called Call Logs for [AccountSid] from [Start Date] to [End Date]
+containing all of your call logs.
+
+It will include the Account SID, phone number friendly name, and phone number.
+
+####Optional parameters
+
+#####Concurrency
 
 The default concurrency is 25, but if you want to adjust this you can pass in an additional parameter:
 
@@ -43,4 +57,17 @@ node generateSummaryBillCsv.js [Account SID] [Account Auth Token] [Start Date (Y
 node generatePhoneNumberCsv.js [Account SID] [Account Auth Token] [Concurrency]
 ```
 
+```
+node pullCallLogs.js [Account SID] [Account Auth Token] [Start Date YYYY-MM-DD] [End Date YYYY-MM-DD] [Concurrency]
+```
+
 Please note that Twilio accounts have a default GET concurrency of 100.
+
+#####Time interval
+
+By default pullCallLogs pulls logs in 2 hour chunks. If you want to pull larger time slots you can adjust this by passing in an additional parameter with the number of minutes like so: 
+```
+node pullCallLogs.js [Account SID] [Account Auth Token] [Start Date YYYY-MM-DD] [End Date YYYY-MM-DD] [Concurrency] [Time Interval to pull in]
+```
+
+
