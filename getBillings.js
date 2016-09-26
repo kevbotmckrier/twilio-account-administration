@@ -35,7 +35,7 @@ var getBillings = function(sid,auth,startDate,endDate,accounts,concurrency){
 
 					stream.write(item.account_sid+','+task.friendly_name+','+item.description+','+item.start_date+','+item.end_date+','+item.count+','+item.count_unit+','+item.usage+','+item.usage_unit+','+item.price+','+item.price_unit+'\n');
 				
-				} 
+				}
 
 			});
 			

@@ -4,6 +4,7 @@
   "description": "creates csv bill from usage api",
   "main": "summary.js",
   "dependencies": {
+    "async": "^2.0.1",
     "moment": "^2.13.0",
     "request-promise": "^3.0.0"
   },
