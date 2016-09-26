@@ -43,6 +43,17 @@ containing all of your call logs.
 
 It will include the Account SID, phone number friendly name, and phone number.
 
+###Pulling the date of the last call across subaccounts
+
+Call with 
+```
+node generateLastCallCsv.js [Account SID] [Account Auth Token]
+```
+
+This will generate a .csv file called Last call forfor [AccountSid] containing a list of all your subaccounts and the date of the last call.
+
+It will include the Account friendly name, Account SID, datetime of last call.
+
 ####Optional parameters
 
 #####Concurrency
