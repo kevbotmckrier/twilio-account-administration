@@ -24,7 +24,7 @@ This .csv includes every possible category so there is some overlap including th
 
 Call with 
 ```
-node generateSummaryBillCsv.js [Account SID] [Account Auth Token]
+node generatePhoneNumberCsv.js [Account SID] [Account Auth Token]
 ```
 
 This will generate a .csv file called Phone Numbers for [AccountSid] containing all of your phone numbers for every subaccount.
