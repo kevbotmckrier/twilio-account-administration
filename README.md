@@ -1,11 +1,11 @@
-##Twilio Account Administration Scripts
+## Twilio Account Administration Scripts
 
-###Installation
+### Installation
 
 
 Clone repo into a local directory and use `npm install` to install dependencies.
 
-###Pulling usage csv
+### Pulling usage csv
 
 Call with 
 ```
@@ -20,7 +20,7 @@ This will include Account SID, Description, Start Date and End Date (for partial
 
 This .csv includes every possible category so there is some overlap including the totalPrice parameter.
 
-###Pulling Twilio Phone Numbers
+### Pulling Twilio Phone Numbers
 
 Call with 
 ```
@@ -31,7 +31,7 @@ This will generate a .csv file called Phone Numbers for [AccountSid] containing 
 
 It will include the Account SID, phone number friendly name, and phone number.
 
-###Pulling Twilio Call Logs
+### Pulling Twilio Call Logs
 
 Call with 
 ```
@@ -43,7 +43,7 @@ containing all of your call logs.
 
 It will include the Account SID, phone number friendly name, and phone number.
 
-###Pulling the date of the last call across subaccounts
+### Pulling the date of the last call across subaccounts
 
 Call with 
 ```
@@ -54,9 +54,9 @@ This will generate a .csv file called Last call forfor [AccountSid] containing a
 
 It will include the Account friendly name, Account SID, datetime of last call.
 
-####Optional parameters
+#### Optional parameters
 
-#####Concurrency
+##### Concurrency
 
 The default concurrency is 25, but if you want to adjust this you can pass in an additional parameter:
 
@@ -74,7 +74,7 @@ node pullCallLogs.js [Account SID] [Account Auth Token] [Start Date YYYY-MM-DD] 
 
 Please note that Twilio accounts have a default GET concurrency of 100.
 
-#####Time interval
+##### Time interval
 
 By default pullCallLogs pulls logs in 2 hour chunks. If you want to pull larger time slots you can adjust this by passing in an additional parameter with the number of minutes like so: 
 ```
