@@ -81,4 +81,12 @@ By default pullCallLogs pulls logs in 2 hour chunks. If you want to pull larger 
 node pullCallLogs.js [Account SID] [Account Auth Token] [Start Date YYYY-MM-DD] [End Date YYYY-MM-DD] [Concurrency] [Time Interval to pull in]
 ```
 
+##### UTC
+
+By default pullCallLogs pulls logs by interpretting the date as Pacific Time. If you want to pull logs in as a UTC timestamp, you can do the following:
+
+```
+node pullCallLogs.js [Account SID] [Account Auth Token] [Start Date YYYY-MM-DD] [End Date YYYY-MM-DD] [Concurrency] [Time Interval to pull in] utc
+```
+
 
