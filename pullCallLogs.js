@@ -8,12 +8,19 @@ if(!(process.argv[2]&&process.argv[3]&&process.argv[4]&&process.argv[5])) {
 var rp = require('request-promise');
 var fs = require('fs');
 var async = require('async');
-var moment = require('moment');
+var moment = require('moment-timezone');
 var Promise = require('bluebird');
 var async = require('async');
 
-var startDate = moment(process.argv[4], 'YYYY-MM-DD');
-var endDate = moment(process.argv[5], 'YYYY-MM-DD');
+
+if(process.argv[8] == 'utc') {
+	var startDate = moment(process.argv[4], 'YYYY-MM-DD','UTC').tz('America/Los_Angeles');
+	var endDate = moment(process.argv[5], 'YYYY-MM-DD').tz('America/Los_Angeles');
+} else {
+	var startDate = moment(process.argv[4], 'YYYY-MM-DD','UTC');
+	var endDate = moment(process.argv[5], 'YYYY-MM-DD');
+}
+
 
 var sid = process.argv[2];
 var auth = process.argv[3];
